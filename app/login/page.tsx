@@ -15,7 +15,8 @@ import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 
-export function Login() {
+
+ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
