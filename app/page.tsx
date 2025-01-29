@@ -1,101 +1,183 @@
+"use client";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-export default function Home() {
+interface Job {
+  _id: string;
+  title: string;
+  cod: string;
+  description: string;
+  requirements: string[];
+  salary: number;
+  experienceLevel: number;
+  location: string;
+  jobType: string;
+  position: string;
+  company: {
+    name: string;
+    website: string;
+    industry: string;
+  };
+}
+const WorkBlog = () => {
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/job");
+        const data = await response.json();
+        setJobs(data);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  console.log(jobs);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="container p-2 mx-auto  py-12">
+      <h1 className="text-3xl font-bold mb-8 text-center">
+        Bizning Ishxonalar website timizga xush kelibsiz Ish kodni eslab qoling
+        kod bilan murojat qilishingiz mumkin
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {jobs.map((post) => (
+          <Card key={post._id} className="overflow-hidden">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={"/image.png"}
+              alt={post.title}
+              width={300}
+              height={200}
+              className="w-full object-cover h-48"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <CardHeader>
+              <div className="flex justify-between items-center mb-2">
+                <Badge variant="secondary">Ish kodi : {post.cod}</Badge>
+                <Badge variant="secondary">{post.company?.name}</Badge>
+                <span className="text-sm text-muted-foreground">
+                  {post.jobType}
+                </span>
+              </div>
+              <CardTitle>{post.title}</CardTitle>
+              <CardDescription>{post.description}</CardDescription>
+            </CardHeader>
+            <CardFooter className="flex gap-2">
+              <Drawer>
+                <DrawerTrigger asChild className="w-full">
+                  <Button className="w-full" variant="outline">
+                    Batafsil o&apos;qish
+                  </Button>
+                </DrawerTrigger>
+                <DrawerContent>
+                  <div className="mx-auto w-full max-w-sm">
+                    <DrawerHeader>
+                      <DrawerTitle>Ish kodi :{post?.cod}</DrawerTitle>
+                      <DrawerTitle>{post?.title}</DrawerTitle>
+                      <DrawerDescription>{post?.description}</DrawerDescription>
+                    </DrawerHeader>
+                    <div className="p-4 pb-0">
+                      <div className="flex items-center  space-x-2">
+                        <div className="flex-1 ">
+                          <div className="text-[0.70rem] uppercase ">
+                            company : {post?.company?.name}
+                          </div>
+                          <div className="text-[0.70rem] uppercase ">
+                            company industry : {post?.company?.industry}
+                          </div>
+                          <div className="text-[0.70rem] uppercase ">
+                            Oylik \ maosh : {post?.salary}
+                          </div>
+                          <div className="text-[0.70rem] uppercase ">
+                            Ish Soati : {post?.jobType}
+                          </div>
+                          <div className="text-[0.70rem] uppercase ">
+                            location : {post?.location}
+                          </div>
+                          <div className="text-[0.70rem] uppercase ">
+                            Talablar :
+                          </div>
+                          <ul className="list-disc text-[15px] pl-4">
+                            {post?.requirements.map((req) => (
+                              <li key={req}>{req}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="mt-3 h-[120px]"></div>
+                    </div>
+                    <DrawerFooter>
+                      <Link
+                        href={`https://t.me/O_ishchi_bot`}
+                        className="w-full"
+                        target="_blank"
+                      >
+                        <Button variant="outline" className="w-full">
+                          <img
+                            src="/telegram.png"
+                            alt="Telegram"
+                            className="w-10 h-6 "
+                          />{" "}
+                          Telegram
+                        </Button>
+                      </Link>
+                      <DrawerClose asChild>
+                        <Button variant="outline">Cancel</Button>
+                      </DrawerClose>
+                    </DrawerFooter>
+                  </div>
+                </DrawerContent>
+              </Drawer>
+              <Link
+                href={`https://t.me/O_ishchi_bot`}
+                className="w-full"
+                target="_blank"
+              >
+                <Button variant="outline" className="w-full">
+                  <img
+                    src="/telegram.png"
+                    alt="Telegram"
+                    className="w-10 h-6 "
+                  />{" "}
+                  Telegram
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+export default WorkBlog;

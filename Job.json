@@ -1,0 +1,222 @@
+[
+  {
+    "cod": 101,
+    "title": "Frontend Developer",
+    "description": "We are looking for a talented Frontend Developer to join our dynamic team. You will be responsible for developing user-friendly web applications and ensuring seamless user experiences.",
+    "requirements": [
+      "Proficiency in HTML, CSS, and JavaScript",
+      "Experience with React or Angular frameworks",
+      "Knowledge of responsive design principles",
+      "Familiarity with version control systems like Git",
+      "Good problem-solving skills and attention to detail"
+    ],
+    "salary": "$2,500 - $4,000 per month",
+    "experienceLevel": "Mid-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "Frontend Developer",
+    "company": {
+      "name": "TechVision Ltd.",
+      "website": "https://techvision.uz",
+      "industry": "Information Technology"
+    }
+  },
+  {
+    "cod": 102,
+    "title": "Backend Developer",
+    "description": "We are seeking a skilled Backend Developer to design and develop robust APIs and server-side logic for our applications.",
+    "requirements": [
+      "Strong knowledge of Node.js, Python, or PHP",
+      "Experience with RESTful API development",
+      "Familiarity with database systems like MySQL or MongoDB",
+      "Understanding of cloud services like AWS or Azure",
+      "Excellent debugging and optimization skills"
+    ],
+    "salary": "$3,000 - $5,000 per month",
+    "experienceLevel": "Mid-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "Backend Developer",
+    "company": {
+      "name": "CodeCraft LLC",
+      "website": "https://codecraft.uz",
+      "industry": "Software Development"
+    }
+  },
+  {
+    "cod": 103,
+    "title": "UI/UX Designer",
+    "description": "We are looking for a creative UI/UX Designer to craft intuitive and visually appealing designs for web and mobile applications.",
+    "requirements": [
+      "Proficiency in design tools like Figma, Sketch, or Adobe XD",
+      "Experience with user research and wireframing",
+      "Knowledge of design systems and accessibility principles",
+      "Ability to work collaboratively with developers and stakeholders",
+      "Strong portfolio showcasing design projects"
+    ],
+    "salary": "$2,000 - $3,500 per month",
+    "experienceLevel": "Mid-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "UI/UX Designer",
+    "company": {
+      "name": "CreativeLab",
+      "website": "https://creativelab.uz",
+      "industry": "Design and Marketing"
+    }
+  },
+  {
+    "cod": 104,
+    "title": "Mobile Developer",
+    "description": "Join our team as a Mobile Developer to create high-quality mobile applications for Android and iOS platforms.",
+    "requirements": [
+      "Experience with Flutter, React Native, or Kotlin",
+      "Strong understanding of mobile UI/UX standards",
+      "Knowledge of mobile app lifecycle and deployment processes",
+      "Familiarity with API integration",
+      "Problem-solving and debugging skills"
+    ],
+    "salary": "$3,500 - $6,000 per month",
+    "experienceLevel": "Senior-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "Mobile Developer",
+    "company": {
+      "name": "AppSphere",
+      "website": "https://appsphere.uz",
+      "industry": "Mobile Development"
+    }
+  },
+  {
+    "cod": 105,
+    "title": "DevOps Engineer",
+    "description": "We are hiring a DevOps Engineer to manage and optimize our CI/CD pipelines and cloud infrastructure.",
+    "requirements": [
+      "Experience with Docker and Kubernetes",
+      "Proficiency in CI/CD tools like Jenkins or GitLab CI",
+      "Knowledge of cloud platforms such as AWS, GCP, or Azure",
+      "Strong scripting skills in Bash, Python, or similar languages",
+      "Ability to troubleshoot system-level issues"
+    ],
+    "salary": "$4,000 - $7,000 per month",
+    "experienceLevel": "Senior-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "DevOps Engineer",
+    "company": {
+      "name": "CloudWorks",
+      "website": "https://cloudworks.uz",
+      "industry": "Cloud Services"
+    }
+  },
+  {
+    "cod": 106,
+    "title": "Project Manager",
+    "description": "We are looking for a Project Manager to lead and manage our software development projects from initiation to delivery.",
+    "requirements": [
+      "Proven experience in project management",
+      "Strong communication and leadership skills",
+      "Familiarity with Agile and Scrum methodologies",
+      "Knowledge of project management tools like Jira or Trello",
+      "Ability to manage timelines and budgets effectively"
+    ],
+    "salary": "$3,000 - $5,000 per month",
+    "experienceLevel": "Mid-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "Project Manager",
+    "company": {
+      "name": "AgileTech",
+      "website": "https://agiletech.uz",
+      "industry": "Software Development"
+    }
+  },
+  {
+    "cod": 107,
+    "title": "QA Engineer",
+    "description": "We are seeking a QA Engineer to ensure the quality and reliability of our software products through rigorous testing.",
+    "requirements": [
+      "Experience with manual and automated testing",
+      "Familiarity with testing tools like Selenium or JMeter",
+      "Strong knowledge of software QA methodologies",
+      "Excellent attention to detail",
+      "Understanding of the software development lifecycle"
+    ],
+    "salary": "$2,500 - $4,000 per month",
+    "experienceLevel": "Mid-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "QA Engineer",
+    "company": {
+      "name": "Testify",
+      "website": "https://testify.uz",
+      "industry": "Quality Assurance"
+    }
+  },
+  {
+    "cod": 108,
+    "title": "Data Scientist",
+    "description": "We are hiring a Data Scientist to analyze and interpret complex data to support business decisions.",
+    "requirements": [
+      "Proficiency in Python or R",
+      "Experience with machine learning frameworks like TensorFlow or PyTorch",
+      "Strong statistical analysis skills",
+      "Knowledge of data visualization tools",
+      "Familiarity with big data technologies like Hadoop or Spark"
+    ],
+    "salary": "$5,000 - $8,000 per month",
+    "experienceLevel": "Senior-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "Data Scientist",
+    "company": {
+      "name": "DataWave",
+      "website": "https://datawave.uz",
+      "industry": "Data Analytics"
+    }
+  },
+  {
+    "cod": 109,
+    "title": "Cybersecurity Specialist",
+    "description": "Join our team as a Cybersecurity Specialist to protect our systems and data from security threats.",
+    "requirements": [
+      "Experience with security tools and protocols",
+      "Knowledge of penetration testing techniques",
+      "Understanding of network security principles",
+      "Proficiency in Python or PowerShell for scripting",
+      "Strong analytical and problem-solving skills"
+    ],
+    "salary": "$4,500 - $7,500 per month",
+    "experienceLevel": "Senior-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "Cybersecurity Specialist",
+    "company": {
+      "name": "SecureTech",
+      "website": "https://securetech.uz",
+      "industry": "Cybersecurity"
+    }
+  },
+  {
+    "cod": 110,
+    "title": "System Administrator",
+    "description": "We are looking for a System Administrator to manage and maintain our IT infrastructure and systems.",
+    "requirements": [
+      "Experience with Linux and Windows server administration",
+      "Knowledge of networking protocols and hardware",
+      "Familiarity with virtualization technologies like VMware",
+      "Strong troubleshooting and problem-solving skills",
+      "Ability to document system configurations and processes"
+    ],
+    "salary": "$3,000 - $5,000 per month",
+    "experienceLevel": "Mid-Level",
+    "location": "Tashkent, Uzbekistan",
+    "jobType": "Full-Time",
+    "position": "System Administrator",
+    "company": {
+      "name": "NetAdmin Pro",
+      "website": "https://netadminpro.uz",
+      "industry": "IT Services"
+    }
+  }
+]
