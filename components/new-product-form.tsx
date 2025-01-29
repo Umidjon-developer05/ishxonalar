@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,9 +15,28 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import toast from "react-hot-toast";
 
+type Company = {
+  name: string;
+  website: string;
+  industry: string;
+};
+
+type FormData = {
+  cod: string;
+  title: string;
+  description: string;
+  requirements: string;
+  salary: string;
+  experienceLevel: string;
+  location: string;
+  jobType: string;
+  position: string;
+  company: Company;
+};
+
 export function NewProductForm() {
   const router = useRouter();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     cod: "",
     title: "",
     description: "",
@@ -43,7 +61,10 @@ export function NewProductForm() {
       const [parent, child] = name.split(".");
       setFormData((prev) => ({
         ...prev,
-        [parent]: { ...prev[parent as keyof typeof prev], [child]: value },
+        [parent]: {
+          ...prev,
+          [child]: value,
+        },
       }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
