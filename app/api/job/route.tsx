@@ -46,3 +46,24 @@ export async function GET() {
     );
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const { id } = await request.json();
+    await mongooseConnect();
+    await JobsAll.findByIdAndDelete(id);
+    console.log("Job deleted successfully");
+    return NextResponse.json(
+      { message: "Job deleted successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error deleting job:", error);
+    return NextResponse.json(
+      {
+        error: "Failed to delete job",
+      },
+      { status: 500 }
+    );
+  }
+}
